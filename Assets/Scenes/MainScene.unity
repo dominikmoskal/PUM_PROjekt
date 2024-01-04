@@ -392,7 +392,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 572706347}
         m_TargetAssemblyTypeName: ChangingScenes, Assembly-CSharp
-        m_MethodName: loadSceneStartGame
+        m_MethodName: loadSceneGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

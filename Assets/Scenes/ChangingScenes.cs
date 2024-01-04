@@ -19,10 +19,14 @@ public class ChangingScenes : MonoBehaviour
     }
     public void loadSceneSettings()
     {
-        SceneManager.LoadScene("SettingsScene");
+        SceneManager.LoadScene("SettingsScene"); 
     }
     public void loadSceneMainScene()
     {
         SceneManager.LoadScene("MainScene");
+    }
+    public void loadSceneGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }
