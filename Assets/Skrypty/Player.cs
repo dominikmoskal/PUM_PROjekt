@@ -3,8 +3,32 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Vector3 direction;
-    public float gravity = -38f; // Zwiêkszona wartoœæ grawitacji
-    public float strength = 10f; // Zwiêkszona si³a
+    public float gravity = -38f;
+    public float strength = 10f; 
+    private SpriteRenderer spriteRenderer;
+
+    public Sprite[] sprites;
+    public int spriteIndex; //
+
+
+
+
+    private void Start()
+    {
+        InvokeRepeating(nameof(AnimateSprite),0.15f,0.15f);
+    }
+    private void AnimateSprite()
+    {
+        spriteIndex++;
+            if(spriteIndex >= sprites.Length)
+                {
+                    spriteIndex = 0;
+                }
+        spriteRenderer.sprite = sprites[spriteIndex];
+    }
+
+
+
 
     public void Update()
     {
@@ -26,4 +50,11 @@ public class Player : MonoBehaviour
         direction.y += gravity *6 * Time.deltaTime;
         transform.position += direction *5* Time.deltaTime;
     }
+
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
 }
