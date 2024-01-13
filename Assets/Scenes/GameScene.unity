@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601d78791dbe57a40aa6cdaf2961c613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minPosition: -800
+  minPosition: -600
   maxPosition: 800
   modeles: {fileID: 4678828872012608304, guid: eef82db7e6dfe384c9635471c31db663, type: 3}
-  spawnfreq: 1
+  spawnfreq: 1.33
 --- !u!4 &943490502
 Transform:
   m_ObjectHideFlags: 0
@@ -647,7 +647,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e762f675b0d1654f993bf2e1883e69a, type: 2}
+  - {fileID: 2100000, guid: faef157e48097024e9a05ba484b57269, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        border = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+        border = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 100f;
     }
 
     void Update()

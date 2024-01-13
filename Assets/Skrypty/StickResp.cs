@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class StickResp : MonoBehaviour
 {
-    public float minPosition = -00f;
-    public float maxPosition = 800f;
+    public float minPosition;
+    public float maxPosition;
 
     public GameObject modeles;
-    public float spawnfreq = 50f;
+    public float spawnfreq;
 
     public void Generate()
     {
-        GameObject sticks = Instantiate(modeles, transform.position, Quaternion.identity);
+        Vector3 lastPosition = transform.position;
+        Vector3 newPosition = lastPosition + Vector3.up * Random.Range(minPosition, maxPosition);
 
-        sticks.transform.position += Vector3.up * Random.Range(minPosition, maxPosition);
+        GameObject sticks = Instantiate(modeles, lastPosition, Quaternion.identity);
+
+        while (Mathf.Abs(lastPosition.y - newPosition.y) > 400f)
+        {
+            newPosition = lastPosition + Vector3.up * Random.Range(minPosition, maxPosition);
+        }
+
+        sticks.transform.position = newPosition;
     }
+
     public void OnEnable() 
     {   
     
