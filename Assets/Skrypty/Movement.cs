@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-    public float speed = 5f;
+    public float speed = 0.01f;
     public float border;
+    public Rigidbody body;
 
-
-    public void Update()
+    void Start()
     {
-        transform.position = Vector3.right  *speed * Time.deltaTime; //
-        if (transform.position.x < border)
+        body = GetComponent<Rigidbody>();
+        border = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+    }
+
+    void Update()
+    {
+        body.MovePosition(body.position + Vector3.left * speed);
+        if (body.position.x < border)
             Destroy(gameObject);
     }
-
-    public void Start()
-    {
-        border = Camera.main.ScreenToWorldPoint(Vector3.zero).x-1f;
-    }
 }
+
+
+
