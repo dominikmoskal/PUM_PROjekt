@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  gravity: -9.8
-  strength: 40
+  gravity: -50
+  strength: 100
   sprites:
   - {fileID: 21300000, guid: a6656739a9f0fe844ab7edbfd64c1524, type: 3}
   - {fileID: 21300000, guid: 8d7fde60508a05146a3989a9c7b6fba4, type: 3}
