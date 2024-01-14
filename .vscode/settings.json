@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "PUM_PROjekt.sln"
+    "dotnet.defaultSolution": "Projekt.sln"
 }

@@ -1,10 +1,11 @@
+using UnityEditor.AdaptivePerformance.Samsung.Android.Editor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Vector3 direction;
-    public float gravity = -38f;
-    public float strength = 10f; 
+    public float gravity = -50f;
+    public float strength = 100f; 
     private SpriteRenderer spriteRenderer;
 
     public Sprite[] sprites;
@@ -56,5 +57,19 @@ public class Player : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Point")
+        {
+            FindObjectOfType<GameSettings>().IncreaseScore();
+        } 
+        else 
+            if(other.gameObject.tag == "Stick")
+            {
+                FindObjectOfType<GameSettings>().EndGame();
+            }
+    }
+
 
 }

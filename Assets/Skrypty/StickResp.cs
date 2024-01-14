@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class StickResp : MonoBehaviour
 {
-    public float minPosition;
-    public float maxPosition;
+    public float minPosition = -600f;
+    public float maxPosition = 800;
 
     public GameObject modeles;
-    public float spawnfreq;
+    public float spawnfreq = 2f;
 
     public void Generate()
     {
