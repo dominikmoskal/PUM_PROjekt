@@ -1,4 +1,3 @@
-using UnityEditor.AdaptivePerformance.Samsung.Android.Editor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
