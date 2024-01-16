@@ -8,7 +8,7 @@ public class StickResp : MonoBehaviour
     public float maxPosition = 800;
 
     public GameObject modeles;
-    public float spawnfreq = 1f;
+    public float spawnfreq = 1.1f;
 
     public void Generate()
     {
@@ -17,7 +17,7 @@ public class StickResp : MonoBehaviour
 
         GameObject sticks = Instantiate(modeles, lastPosition, Quaternion.identity);
 
-        while (Mathf.Abs(lastPosition.y - newPosition.y) > 400f)
+        while (Mathf.Abs(lastPosition.y - newPosition.y) > 300f)
         {
             newPosition = lastPosition + Vector3.up * Random.Range(minPosition, maxPosition);
         }

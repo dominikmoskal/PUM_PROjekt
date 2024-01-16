@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 13f;
+    public float speed = 20f;
     public float border;
     public Rigidbody body;
 
