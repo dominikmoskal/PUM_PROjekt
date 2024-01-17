@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Android;
 
 public class Player : MonoBehaviour
 {
@@ -66,6 +67,7 @@ public class Player : MonoBehaviour
         else 
             if(other.gameObject.tag == "Stick")
             {
+                Handheld.Vibrate();
                 FindObjectOfType<GameSettings>().EndGame();
             }
     }

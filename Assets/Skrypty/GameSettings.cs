@@ -10,7 +10,7 @@ public class GameSettings : MonoBehaviour
     public Text txtScore;
     public Text txtGameOver;
 
-
+    public AudioSource audioSource;
     public void IncreaseScore()
     {
         result++;
@@ -20,7 +20,7 @@ public class GameSettings : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("THE END");
-        txtGameOver.enabled = true;
+        txtGameOver.enabled = false;
         
         SceneManager.LoadScene("MainScene");
         
@@ -31,7 +31,4 @@ public class GameSettings : MonoBehaviour
         isGamePaused = true;
         Debug.Log("Game is Paused");
     }*/
-
-
-
 }
