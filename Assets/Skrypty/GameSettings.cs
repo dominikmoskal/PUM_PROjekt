@@ -9,8 +9,9 @@ public class GameSettings : MonoBehaviour
     private int result;
     public Text txtScore;
     public Text txtGameOver;
-
     public AudioSource audioSource;
+
+    public static float czas;
     public void IncreaseScore()
     {
         result++;
@@ -19,12 +20,13 @@ public class GameSettings : MonoBehaviour
 
     public void EndGame()
     {
+        czas = Time.timeScale;
+        Time.timeScale = 0f;
         Debug.Log("THE END");
         txtGameOver.enabled = false;
-        
-        SceneManager.LoadScene("MainScene");
-        
+    
     }
+
    /* void PauseGame()
     {
         Time.timeScale = 0f; // zatrzymuje czas w grze

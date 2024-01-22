@@ -8,6 +8,7 @@ TagManager:
   - Point
   - score
   - Sound
+  - BTN
   layers:
   - Default
   - TransparentFX
