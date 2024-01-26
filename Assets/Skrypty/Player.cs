@@ -9,30 +9,48 @@ public class Player : MonoBehaviour
     public float gravity = -50f;
     public float strength = 80f; 
     private SpriteRenderer spriteRenderer;
-
-    public BirdSkin birdSkin;
     public Sprite[] sprites;
     public int spriteIndex; 
     public int skinIndex = 0;
     public GameObject button;
 
+    // Przenieś deklarację obiektów z tagami Bird do poziomu klasy
+    private GameObject bird0;
+    private GameObject bird1;
+    private GameObject bird2;
+    private GameObject bird3;
+    private GameObject bird4;
 
     private void Start()
     {
+        InvokeRepeating(nameof(AnimateSprite),0.15f,0.15f);
+
+        bird0 = GameObject.Find("Bird0");
+        bird1 = GameObject.Find("Bird1");
+        bird2 = GameObject.Find("Bird2");
+        bird3 = GameObject.Find("Bird3");
+        bird4 = GameObject.Find("Bird4");
+
+        skinIndex = PlayerPrefs.GetInt("skinIndex", 0);
+
+        if(GameObject.Find("Bird"+skinIndex) != bird0) Destroy(bird0);
+        if(GameObject.Find("Bird"+skinIndex) != bird1) Destroy(bird1);
+        if(GameObject.Find("Bird"+skinIndex) != bird2) Destroy(bird2);
+        if(GameObject.Find("Bird"+skinIndex) != bird3) Destroy(bird3);
+        if(GameObject.Find("Bird"+skinIndex) != bird4) Destroy(bird4);
 
         button.SetActive(false);
-        InvokeRepeating(nameof(AnimateSprite),0.15f,0.15f);
-    }
+    }   
+
     private void AnimateSprite()
     {
       
-        //skinIndex = 0;
         spriteIndex++;
         if(spriteIndex >= sprites.Length)
         {
             spriteIndex = 0;
         }
-        spriteRenderer.sprite = sprites[spriteIndex];//birdSkin.tablica_obrazow[skinIndex, spriteIndex];
+        spriteRenderer.sprite = sprites[spriteIndex];
     }
 
     public void Update()

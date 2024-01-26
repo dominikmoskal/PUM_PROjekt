@@ -9,6 +9,11 @@ TagManager:
   - score
   - Sound
   - BTN
+  - Bird0
+  - Bird1
+  - Bird2
+  - Bird3
+  - Bird4
   layers:
   - Default
   - TransparentFX
