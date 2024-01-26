@@ -13,14 +13,13 @@ public class Player : MonoBehaviour
     public int spriteIndex; 
     public int skinIndex = 0;
     public GameObject button;
-
-    // Przenieś deklarację obiektów z tagami Bird do poziomu klasy
     private GameObject bird0;
     private GameObject bird1;
     private GameObject bird2;
     private GameObject bird3;
     private GameObject bird4;
 
+    public bool vibrationsEnabled = true;
     private void Start()
     {
         InvokeRepeating(nameof(AnimateSprite),0.15f,0.15f);
@@ -95,10 +94,14 @@ public class Player : MonoBehaviour
             if(other.gameObject.tag == "Stick")
             {
                 button.SetActive(true);
-                Handheld.Vibrate();
+                if(PlayerPrefs.GetInt("IsVibrationEnabled") == 1)
+                {
+                    Handheld.Vibrate();
+                }
                 FindObjectOfType<GameSettings>().EndGame();
             }
     }
+    
 
 
 }
