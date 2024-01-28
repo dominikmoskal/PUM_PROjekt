@@ -6,7 +6,7 @@ public class LoopedBcg : MonoBehaviour
 {
     public MeshRenderer meshRenderer;
 
-    public float bcgSpeed = 0.333f;
+    public float bcgSpeed = 0.1f;
    
     private void Awake()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public static float speed = 20f;
+    public static float speed = 300f;
     public float border;
     public Rigidbody body;
 
@@ -16,22 +16,23 @@ public class Movement : MonoBehaviour
     }
     public void Easy()
     {
-        Time.timeScale = 0.666f;
+        Time.timeScale = 1.333f;
         SceneManager.LoadScene("MainScene");
     }
     public void Normal()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1.666f;
         SceneManager.LoadScene("MainScene");
     }
     public void Hard()
     {
-        Time.timeScale = 1.5f;
+        Time.timeScale = 2.333f;
         SceneManager.LoadScene("MainScene");
     }
     void Update()
     {
-        body.MovePosition(body.position + Vector3.left * speed);
+        float speedPerFrame = speed * Time.deltaTime;
+        body.MovePosition(body.position + Vector3.left * speedPerFrame);
         if (body.position.x < border)
             Destroy(gameObject);
     }

@@ -8,7 +8,7 @@ public class StickResp : MonoBehaviour
     public float maxPosition = 800;
 
     public GameObject modeles;
-    public float spawnfreq = 1.1f;
+    public float spawnfreq = 2f;
 
     public void Generate()
     {

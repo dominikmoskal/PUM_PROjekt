@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Vector3 direction;
-    public float gravity = -50f;
-    public float strength = 80f; 
+    public float gravity = -30f;
+    public float strength = 35f; 
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     public int spriteIndex; 
@@ -20,9 +20,22 @@ public class Player : MonoBehaviour
     private GameObject bird4;
 
     public bool vibrationsEnabled = true;
+
+    void Awake()
+    {
+        QualitySettings.vSyncCount = 1;
+        Application.targetFrameRate = 60;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private void Start()
     {
-        InvokeRepeating(nameof(AnimateSprite),0.15f,0.15f);
+        InvokeRepeating(nameof(AnimateSprite),0.3f,0.3f);
+        
+        if(Time.timeScale == 1.0f)
+        {
+            Time.timeScale = 1.666f;
+        }
 
         bird0 = GameObject.Find("Bird0");
         bird1 = GameObject.Find("Bird1");
@@ -78,10 +91,6 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = GameSettings.czas;
         SceneManager.LoadScene("MainScene");
-    }
-    private void Awake()
-    {   
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
